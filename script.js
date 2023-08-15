@@ -58,4 +58,6 @@ searchButton.addEventListener("click", (event) => {
   event.preventDefault();
   showWeatherData();
 });
+
+
         

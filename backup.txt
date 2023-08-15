@@ -1,0 +1,26 @@
+const apiKey = "d14c83d80fc0e1f0fa5ae9e6f4f3a188";
+
+let city_input = document.querySelector("#city-input");
+let search_button = document.querySelector("#search-button");
+
+const getWeatherData = async (city) => {
+		const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+    try {
+      const res = await fetch(apiWeatherURL);
+		  const data = await res.json(); 
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+	};
+
+const showOpenWheaterData = async (city) => {
+  const dataOpenWheater = await getWeatherData(city);
+  console.log(dataOpenWheater.name);
+  console.log(dataOpenWheater.temp);
+};
+	search_button.addEventListener("click", (event) => {
+	event.preventDefault();
+	const city_value = city_input.value;
+	showOpenWheaterData(city_value);
+});

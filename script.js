@@ -7,12 +7,14 @@ let tagNameCity = document.getElementById("name-city");
 let tagDegress = document.getElementById("degress");
 let divBoxWithWheatherData = document.getElementsByName("div-box-wheater");
 let divMenssageError = document.getElementById("div-menssage-error");
+let cityData = document.getElementById('city-data');
 
 const getWeatherData = async (city) => {
   const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
   try {
     const response = await fetch(apiWeatherURL);
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
@@ -20,6 +22,7 @@ const getWeatherData = async (city) => {
 };
 
 const showWeatherData = async () => {
+  
   const cityValue = cityInput.value;
   if (cityValue) {
     try {
@@ -31,7 +34,7 @@ const showWeatherData = async () => {
       console.log(temp);
       
       if (divMenssageError.style.display == "block"){
-        divMenssageError.style.display = "none"
+        divMenssageError.style.display = "none";
         tagNameCity.innerText = name;
         tagDegress.innerText = temp + " C°";
         divBoxWithWheatherData[0].style.display = "block";

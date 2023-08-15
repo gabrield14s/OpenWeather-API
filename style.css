@@ -2,32 +2,70 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-body{
-  background-image: linear-gradient(to right, rgb(1, 21, 26), rgb(0, 6, 33));
-}
-
-h1{
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-}
-
-h2{
+* {
   font-family: 'Poppins', sans-serif;
 }
 
-#box-div{
+#box-div {
   padding: 40px;
-} 
+}
 
-#search-button{
+#search-button {
   margin-left: 10px;
 }
 
-div[name="div-box-wheater"]{
-  margin-top: 20px;
+div[name="div-box-wheater"] {
   display: none;
 }
 
-#div-menssage-error{
+#div-menssage-error {
+  margin-top: 20px;
   display: none;
+  align-items: center;
+}
+
+#menssage-error {}
+
+
+.main-card {
+  background: linear-gradient(65deg, #d9d93f, gray);
+  width: 30%;
+  min-width: 300px;
+}
+
+main {
+  background-image: linear-gradient(to right, rgb(1, 21, 26), rgb(6, 9, 25));
+}
+
+.title {
+  letter-spacing: -0.75px;
+}
+
+#form-input {
+  position: relative;
+  width: 100%;
+}
+
+#form-input label {
+  position: absolute;
+}
+
+#form-input input {
+  border: rgb(6, 9, 25) 1px solid;
+  width: 100%;
+  border-radius: 3px;
+  padding: 5px 5px 0px 5px;
+  background-color: #eee;
+  outline: none;
+}
+
+
+#form-input label {
+  left: 6px;
+  top: 5px;
+}
+
+#form-input input:focus~label {
+  top: -10px;
+  background-color: transparent
 }

@@ -5,38 +5,47 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Using OpenWheter API</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
   <script src="script.js" defer></script>
 </head>
 
-<body>  
-  <div class="position-absolute top-50 start-50 translate-middle">
-    <div class="p-3 mb-2 bg-warning text-dark">
-      <div id="box-div">
-        <h1>OpenWheater API</h1>
-          <br>
-          <h2>Previsão do Tempo</h2>
-          <br>
-          <div class="d-flex justify-content-evenly">
-          <input id="city-input" class="form-control" type="text"  aria-label="readonly input example">
-          <button type="button" id="search-button" class="btn btn-outline-secondary">Buscar</button>
+<body>
+  <main class="d-flex align-items-center justify-content-center vh-100 vw-100 p-4">
+    <div class="p-3 mb-2 rounded-3 text-dark shadow main-card">
+      <div id="box-div" class="d-flex flex-column align-items-center">
+        <h1 class="fw-bold text-center title">OpenWheater API</h1>
+        <h3 class="fw-medium text-center title">Previsão do Tempo</h3>
+
+        <div class="w-100 mt-4">
+          <form class="d-flex w-100">
+            <span id="form-input">
+              <input id="city-input" type="text" placeholder="." aria-label="readonly input example">
+              <label for="city-input">City Name</label>
+            </span>
+            <button type="submit" id="search-button" class="btn btn-outline-warning">Buscar</button>
+          </form>
         </div>
 
-        <div name="div-box-wheater">
-          <h2 id="name-city"></h2>
-        </div>
-        <div name="div-box-wheater">
-          <p id="degress"></p>
+        <div class="d-flex align-items-center flex-column mt-4" id="city-data">
+          <div name="div-box-wheater" class="fw-bold">
+            <h2 id="name-city" class="fw-semibold"></h2>
+          </div>
+          <div name="div-box-wheater">
+            <p id="degress" class="fs-4"></p>
+          </div>
         </div>
 
-        <div id="div-menssage-error">
-          <p id="menssage-error">Local Inválido, Tente Novamente</p>
+        <div class="justify-content-evenly" id="div-menssage-error">
+          <p id="menssage-error" class="text-danger fw-bold">Local Inválido, Tente Novamente</p>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </body>
 
 </html>

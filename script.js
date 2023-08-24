@@ -5,6 +5,7 @@ const searchButton = document.querySelector("#search-button");
 
 let tagNameCity = document.getElementById("name-city");
 let tagDegress = document.getElementById("degress");
+let tagCloudDescription = document.getElementById("cloud-description");
 let divBoxWithWheatherData = document.getElementsByName("div-box-wheater");
 let divMenssageError = document.getElementById("div-menssage-error");
 let cityData = document.getElementById('city-data');
@@ -29,26 +30,38 @@ const showWeatherData = async () => {
       const weatherData = await getWeatherData(cityValue);
       let name = weatherData.name
       let temp =  weatherData.main.temp;
+      let cloudDescription = weatherData.weather[0].description;
       
       console.log(name);     
       console.log(temp);
       
       if (divMenssageError.style.display == "block"){
         divMenssageError.style.display = "none";
+
+        // Inserindo os dados obtidos do JSON em nosso HTML
         tagNameCity.innerText = name;
         tagDegress.innerText = temp + " C°";
+        tagCloudDescription.innerText = cloudDescription;
+
         divBoxWithWheatherData[0].style.display = "block";
         divBoxWithWheatherData[1].style.display = "block";
+        divBoxWithWheatherData[2].style.display = "block";
       }
+
+      // Inserindo os dados obtidos do JSON em nosso HTML
       tagNameCity.innerText = name;
       tagDegress.innerText = temp + " C°";
+      tagCloudDescription.innerText = cloudDescription;
+
       divBoxWithWheatherData[0].style.display = "block";
       divBoxWithWheatherData[1].style.display = "block";
+      divBoxWithWheatherData[2].style.display = "block";
       
     } catch (error) {
       if (divBoxWithWheatherData[0].style.display == "block" & divBoxWithWheatherData[1].style.display == "block"){
         divBoxWithWheatherData[0].style.display = "none";
         divBoxWithWheatherData[1].style.display = "none";
+        divBoxWithWheatherData[2].style.display = "none";
         divMenssageError.style.display = "block";
       }
       divMenssageError.style.display = "block";

@@ -24,9 +24,6 @@ div[name="div-box-wheater"] {
   align-items: center;
 }
 
-#menssage-error {}
-
-
 .main-card {
   background: linear-gradient(65deg, #d9d93f, gray);
   width: 30%;
@@ -54,7 +51,7 @@ main {
   border: rgb(6, 9, 25) 1px solid;
   width: 100%;
   border-radius: 3px;
-  padding: 5px 5px 0px 5px;
+  padding: 5px 5px 5px 5px;
   background-color: #eee;
   outline: none;
 }
@@ -62,10 +59,11 @@ main {
 
 #form-input label {
   left: 6px;
-  top: 5px;
+  top: 6px;
 }
 
 #form-input input:focus~label {
   top: -10px;
-  background-color: transparent
+  display: none;
+  background-color: transparent;
 }

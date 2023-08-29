@@ -10,12 +10,22 @@
   padding: 40px;
 }
 
+.city-data{
+  border-top: 1px solid #fff;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
 #search-button {
   margin-left: 10px;
 }
 
 div[name="div-box-wheater"] {
   display: none;
+}
+
+.country-icon{
+  margin-right: 10px;
 }
 
 #div-menssage-error {
@@ -31,7 +41,7 @@ div[name="div-box-wheater"] {
 }
 
 main {
-  background-image: linear-gradient(to right, rgb(1, 21, 26), rgb(6, 9, 25));
+  background-image: linear-gradient(to right, rgb(1, 21, 26), rgb(8, 13, 43));
 }
 
 .title {

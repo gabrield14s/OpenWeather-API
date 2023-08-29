@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
@@ -19,28 +20,39 @@
   <main class="d-flex align-items-center justify-content-center vh-100 vw-100 p-4">
     <div class="p-3 mb-2 rounded-3 text-dark shadow main-card">
       <div id="box-div" class="d-flex flex-column align-items-center">
-        <h1 class="fw-bold text-center title">OpenWheater API</h1>
+        <h1 class="fw-bold text-center title">OpenWeather API</h1>
         <h3 class="fw-medium text-center title">Previsão do Tempo</h3>
 
         <div class="w-100 mt-4">
           <form class="d-flex w-100">
             <span id="form-input">
-              <input id="city-input" type="text" placeholder="." aria-label="readonly input example">
-              <label for="city-input">City Name</label>
+              <input id="city-input" type="text" placeholder="City Name" aria-label="readonly input example">
+              
             </span>
             <button type="submit" id="search-button" class="btn btn-outline-warning">Buscar</button>
           </form>
         </div>
 
         <div class="d-flex align-items-center flex-column mt-4" id="city-data">
-          <div name="div-box-wheater" class="fw-bold">
-            <h2 id="name-city" class="fw-semibold"></h2>
+          <div name="div-box-wheater" class="fw-bold flex-row align-items-center">
+            <i class="fa-solid fa-location-dot"></i>
+            <h2 id="name-city" class="fw-semibold mb-0 fs-7" style="margin-right: 10px; margin-left: 10px;"></h2>
+            <img id="country-icon" src="">
           </div>
           <div name="div-box-wheater">
-            <p id="degress" class="fs-4"></p>
+            <p id="degress" style="font-size: 50px; margin-top: 16px;"></p>
+          </div>
+          <div name="div-box-wheater" class="flex-row align-items-center" style="text-transform: capitalize">
+            <p id="cloud-description" class="fw-semibold" style="margin-bottom: 0px;"></p>
+            <img id="description-icon" src="" alt="Error">
           </div>
           <div name="div-box-wheater">
-            <p id="cloud-description"></p>
+            <i class="fa-solid fa-droplet" style="margin-right: 10px;"></i>
+            <p id="humidity" style="margin-right: 10px;">
+            </p>
+            <i class="fa-solid fa-wind" style="margin-right: 10px; margin-left: 15px;"></i>
+            <p id="wind">
+            </p>
           </div>
         </div>
 
